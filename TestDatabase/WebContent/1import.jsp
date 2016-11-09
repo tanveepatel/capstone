@@ -4,6 +4,8 @@
 <%@ page import="java.util.*"%>
 <%@ page import="model.*"%>
 <%@ page import="databaseOp.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
 	"http://www.w3.org/TR/html4/loose.dtd">
@@ -65,20 +67,11 @@
 		style="background-color:light-white">
 			<!-- #d8ecf3,#c4e3ed to try -->
 		
-		<form method="post" action="UploadController" enctype="multipart/form-data" data-ajax="false" style="width: 300px" >
+		<form method="post" action="UploadController" enctype="multipart/form-data" data-ajax="false" style="width: 300px" accept=".csv">
 			Select file to upload: <input type="file" name="uploadFile" /> 
 			<input data-ajax="false" type="submit" value="Upload"/>
 		</form>
-		<h2>FileData Entries - <%=size1 %></h2>
-							
-		<table cellspacing="25">
-		<tr><b>
-		<td><b>First Name</b></td>
-		<td><b>Last Name</b></td>
-		<td><b>Date</b></td>
-		<td><b>Project Name</b></td>
-		<td><b>Hours</b></td>
-		<td></td><td></td></b></tr>		
+			
 			<%-- 	<%
 	    	for(int i=0; i < size1;i++)
 	    	{
@@ -133,6 +126,7 @@
 						for (int j = 0; j < clientProjects.size(); j++) {
 							String team = ((Project) clientProjects.get(j)).getTeam();
 							List<String> teamList = Arrays.asList(team.split(", "));
+							System.out.println(team);
 							String projectName = clientProjects.get(j).getProjectName();
 							pageContext.setAttribute("projectName", projectName);
 							double projectSum = dao.getSumProjectHours(projectName);
@@ -147,7 +141,7 @@
 							<h1>${projectName}<span class="ui-li-count">Total hours: ${projectSum}</h1>
 							<h4>Project Resources:</h4>
 							<%
-							System.out.println("running from import.jso");
+							System.out.println("running from import.jsp");
 							
 								for (int k = 0; k < teamList.size(); k++) {
 									String resourceName = teamList.get(k);
