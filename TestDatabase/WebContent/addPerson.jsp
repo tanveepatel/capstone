@@ -51,7 +51,7 @@
 				<ul>
 					<li><a href="2resources.jsp" class="ui-corner-all" >Resources</a></li>
 					<li><a href="2clients.jsp" class="ui-corner-all" >Clients</a></li>
-					<li><a href="2categories.jsp" class="ui-corner-all">Categories</a></li>
+					
 						
 				</ul>
 				</div>	
@@ -65,18 +65,18 @@
 					<table>
 					<tr>
 					<td><label for="fname">First name:</label></td>
-					<td><input type="text" name="fname" id="fname"></td>
+					<td><input type="text" name="fname" id="fname" required></td>
 					<td>&nbsp;&nbsp;</td>
 					<td><label for="lname">Last name:</label> </td>
-					<td><input type="text" name="lname" id="lname"></td>
+					<td><input type="text" name="lname" id="lname" required></td>
 					</tr>
 					
 					<tr>
 					<td><label for="brate">Billable Rate:</label> </td>
-					<td><input type="text" name="brate" id="brate"></td>
+					<td><input placeholder="Please enter number here..." type="text" name="brate" id="brate" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1')" required></td>
 					<td>&nbsp;&nbsp;</td>
 					<td><label for="crate">Cost Rate:</label></td>
-					<td><input type="text" name="crate" id="crate"></td>
+					<td><input placeholder="Please enter number here..." type="text" name="crate" id="crate" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1')" required></td>
 					</tr>
 					
 					<tr>
@@ -100,7 +100,7 @@
 					
 					<tr>
 					<td><label for="email">Email:</label></td>
-					<td><input type="email" name="email" id="email"></td>
+					<td><input type="email" name="email" id="email" required></td>
 					<td>&nbsp;&nbsp;</td>
 					<td> </td>
 					<td></td>

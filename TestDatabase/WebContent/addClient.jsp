@@ -47,7 +47,7 @@
 				<ul>
 					<li><a href="2resources.jsp" class="ui-corner-all" >Resources</a></li>
 					<li><a href="2clients.jsp" class="ui-corner-all" >Clients</a></li>
-					<li><a href="2categories.jsp" class="ui-corner-all">Categories</a></li>
+					
 						
 				</ul>
 				</div>	
@@ -61,7 +61,7 @@
 					<table>
 					<tr>
 						<td><label for="cname">Name:</label></td> 
-						<td><input type="text" name="name" id="name"></td>
+						<td><input type="text" name="name" id="name" required></td>
 					</tr>
 					<tr>
 						<td><label for="address">Address:</label></td>
@@ -69,7 +69,7 @@
 					</tr>
 					<tr>
 					<td><label for="select-native-1">Currency:</label></td> 
-					<td><select name="currency" id="select-native-1">
+					<td><select name="currency" id="select-native-1" required>
 					<option value="cad">CAD</option>
 					<option value="usd">USD</option>
 					<option value="gdp">GDP</option>

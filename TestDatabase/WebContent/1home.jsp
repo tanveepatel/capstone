@@ -17,7 +17,8 @@
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style3.css">
 
-
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+			
 <title>Home</title>
 </head>
 <body>
@@ -63,13 +64,12 @@
 		background-repeat: no-repeat;
 		background-size: 100% 100%;">
 		<div id="my_chart"
-				style="width: 600px; height: 400px; position: absolute; top: 40%; left: 32%;"></div>
+				style="background-color: none;width: 550px; height: 350px; position: absolute; top: 30%; left: 32%; left:750px;"></div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<%
 				JSONArray data = dao.generateJSON();
 				pageContext.setAttribute("data", data);
 			%>
-			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<script>
    google.load("visualization", "1", {packages:["corechart"]});
    google.setOnLoadCallback(drawChart);

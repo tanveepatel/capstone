@@ -71,9 +71,9 @@
 					</div>
 				</div>
 
-<div data-role="main" class="ui-content" style="background-color:light-white">
+<div data-role="main" class="ui-content" style="background-color:light-white; height:130px;">
 				<form method="post" action="ProjectReportController" style="width: 20%; margin: 0 auto; width: 100%; text-align: left">
-				<table>
+				<table align="center">
 				<tr>
 			
 						<td><label for="projectName">Project Name:</label> </td>

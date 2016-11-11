@@ -60,7 +60,7 @@
 				<ul>
 					<li><a href="2resources.jsp" class="ui-corner-all" >Resources</a></li>
 					<li><a href="2clients.jsp" class="ui-corner-all" >Clients</a></li>
-					<li><a href="2categories.jsp" class="ui-corner-all">Categories</a></li>
+					
 						
 				</ul>
 				</div>	

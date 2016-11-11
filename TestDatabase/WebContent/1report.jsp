@@ -14,6 +14,7 @@
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style3.css">
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <%@ page import="org.json.simple.JSONArray"%>
 <%@ page import="org.json.simple.JSONObject"%>
 <title>Report</title>
@@ -80,8 +81,8 @@
 			<div data-role="main" class="ui-content" style="background-color:light-white; ">
 				<table>
 				<tr> <td><a href="projectSummaryReport.jsp" class="ui-corner-all">Project Summary Report</a><td></tr>
-				<tr><td><a href="invoiceReport.jsp" class="ui-corner-all">Invoice Report</a></td></tr>
-				<tr><td><a href="resourceReport.jsp" class="ui-corner-all">Resource Report</a></td></tr>
+				<tr><td><a href="resourceHours.jsp" class="ui-corner-all">Analyse Resources Hours</a></td></tr>
+				<!-- <tr><td><a href="resourceReport.jsp" class="ui-corner-all">Resource Report</a></td></tr> -->
 					
 				</table>
 				
@@ -94,7 +95,7 @@
 				JSONArray data2 = dao.generateDeptAvgRateJSON();
 				pageContext.setAttribute("data2", data2);
 			%>
-			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		
 			<script>
    google.load("visualization", "1", {packages:["corechart"]});
    google.setOnLoadCallback(drawChart);
@@ -115,6 +116,6 @@
 	</div>
 			</div>
 	
-	</div>
+
 </body>
 </html>
