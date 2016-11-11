@@ -20,6 +20,25 @@
 
 
 <title>Import</title>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  th = table.getElementsByTagName("th");
+  for (i = 0; i < th.length; i++) {
+    //td = tr[i].getElementsByTagName("td")[0];
+    if (th) {
+      if (th.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
 
     
 </head>
@@ -109,15 +128,17 @@
       	</table> --%>
       	
       	
+      	 <input id="myInput" onkeyup="myFunction()" placeholder="Search For Customers...">
       	<br>
-			<table style="width: 100%; margin: auto; left: 50%; background-color:lightcyan;" class="table">
+			<table id= "myTable" style="width: 100%; margin: auto; left: 50%;background-color:#40bf80;" class="table">
 				<%
 					for (int i = 0; i < size1; i++) {
 				%>
-				<tr style= "background-color: blue;" >
+				<tr style= "font-size:20px;" >
 
-					<th class="info"><b><%=((Client)clients.get(i)).getClientName()%></b></th>
+					<th data-filter="true" data-input="#filterTable-input" class="info"><b><%=((Client)clients.get(i)).getClientName()%></b></th>
 				</tr>
+				
 				
 				<%
 					String name = clients.get(i).getClientName();
@@ -133,6 +154,7 @@
 							pageContext.setAttribute("projectSum", projectSum);
 							
 				%>
+			
 				<tr>
 				
 
