@@ -128,7 +128,7 @@ public class UploadController extends HttpServlet {
 		} catch (Exception ex) {
 			System.out.println("error!");
 			JOptionPane.showMessageDialog ( 
-					null, "Please upload csv file", "Upload was unsuccessful", JOptionPane.ERROR_MESSAGE);
+					null, "Please upload csv file", "  Upload was unsuccessful", JOptionPane.ERROR_MESSAGE);
 			request.setAttribute("message", "There was an error: " + ex.getMessage());
 		}
 		RequestDispatcher view1 = request.getRequestDispatcher(INSERT_OR_EDIT);
