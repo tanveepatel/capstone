@@ -47,6 +47,7 @@
 						<li><a href="1home.jsp" data-icon="home" class="ui-corner-all">Home</a></li>
 						<li><a href="1import.jsp" data-icon="info" class="ui-corner-all">Import Timesheets</a></li>
 						<li ><a href="1project.jsp" data-icon="bullets" class="ui-corner-all">Projects</a></li>
+						
 						<li ><a href="1report.jsp" data-icon="action" class="ui-corner-all">Reports</a></li>
 						<li ><a href="1manage.jsp"data-icon="user" class="ui-corner-all">Manage</a></li>
 						

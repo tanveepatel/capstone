@@ -295,7 +295,7 @@ pageEncoding="ISO-8859-1"%>
       	
       	
       	 <form class="ui-filterable">
-  <input id="myFilter" data-type="search" placeholder="Search by client name">
+  <input id="myFilter" data-type="search" placeholder="Search by Client Name or Project name">
 </form>
       	<br>
 			<table data-filter="true" data-input="#myFilter" id= "myTable" style="width: 100%; margin: auto; left: 50%;background-color:#40bf80;" class="table">

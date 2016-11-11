@@ -65,7 +65,7 @@
 				</div>
 		<div data-role="main" class="ui-content" style="background-color:light-white">
 			<a href="addPerson.jsp" data-role="button" data-icon="plus"
-				data-iconpos="left" style="width: 100px;">Add Resource</a>
+				data-iconpos="left" style="width: 200px;">Add Resource</a>
 			<div>
 			<h2>Resource -<%=size1 %></h2>
 		<table cellspacing="25">

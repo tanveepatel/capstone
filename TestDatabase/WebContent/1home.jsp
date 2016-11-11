@@ -64,7 +64,7 @@
 		background-repeat: no-repeat;
 		background-size: 100% 100%;">
 		<div id="my_chart"
-				style="background-color: none;width: 550px; height: 350px; position: absolute; top: 30%; left: 32%; left:750px;"></div>
+				style="background-color: none;width: 550px; height: 350px; position: absolute; top: 30%; left: 32%;"></div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<%
 				JSONArray data = dao.generateJSON();

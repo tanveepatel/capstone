@@ -99,17 +99,20 @@
 			<script>
    google.load("visualization", "1", {packages:["corechart"]});
    google.setOnLoadCallback(drawChart);
-   function drawChart() {
-    // Create and populate the data table.
-    var data2 = google.visualization.arrayToDataTable(${data2});
-    var options2 = {
-      title: 'Average Bill Rate by Department'
-  
-    };
-     // Create and draw the visualization.
-    new google.visualization.BarChart(
-      document.getElementById('my_chart2')).draw(data2, options2);
-  }
+ 
+	   function drawChart() {
+		    // Create and populate the data table.
+		    var data2 = google.visualization.arrayToDataTable(${data2});
+		    var options2 = {
+		      title: 'Average Bill Rate by Department'
+		  
+		    };
+		     // Create and draw the visualization.
+		    new google.visualization.BarChart(
+		      document.getElementById('my_chart2')).draw(data2, options2);
+		  }
+   
+   
 </script>
 		</div>
 
