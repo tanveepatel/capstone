@@ -12,16 +12,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <!-- Include meta tag to ensure proper rendering and touch zooming -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script
-	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style3.css">
-<link
-	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
-	rel="stylesheet">
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 
 <title>Report</title>
@@ -30,8 +26,8 @@
 
 	<!-- Report -->
 	<div data-role="page" id="report">
-		<%
-			DatabaseOperations dao=new DatabaseOperations();
+<% 
+				DatabaseOperations dao=new DatabaseOperations();
 				List<Project> projects = new Project();
 				projects=dao.getAllProjects();
 							
@@ -54,20 +50,20 @@
 
 				String sql = "select name from project";
 				String sql2 = "select fname from resource";
-		%>
-
-		<div class="thumbnail">
+%>
+			
+<div class="thumbnail">
 			<img src="css/themes/images/t1logo.png" />
-			<div style="float: right">
-				<a>Welcome Home, <%=session.getAttribute("name")%>!
-				</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="logout.jsp">LogOut</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-				<a href="1help.jsp">Help</a>&nbsp;
+			<div style="float:right">
+			<a>Welcome Home, <%=session.getAttribute("name")%>!</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="logout.jsp">LogOut</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="1help.jsp">Help</a>&nbsp;
 			</div>
 		</div>
-
-
-
-		<div id="maintab" class="ui-bar ui-bar-a">
+			
+			
+				
+					<div id="maintab" class="ui-bar ui-bar-a" style="height:auto">
 					<p style="text-align:center; font-size: 20px;font-family: 'Comfortaa', cursive;">Financial
 				Reporting Tool</p>
 				<div data-role="navbar" id="tabs">
@@ -78,16 +74,23 @@
 						
 						
 						<li>
-						<div class="dropdown">
-							<button data-icon="action" class="ui-corner-all"
-								style="background: #2164d1; color: white; width: 269px;">Reports</button>
-							<div class="dropdown-content"
-								style="position: fixed; background: #2164d1; color: white; width: 269px;">
-								<a href="projectSummaryReport.jsp">Project Summary Report</a> <a href="resourceHours.jsp">Resource
-									Analysation Report</a> <a href="billRateDepartment.jsp">Bill Rate For Department </a>
-							</div>
-						</div>
-					</li>
+						<div class="dropdown" >
+  <button  data-icon="action" class="ui-corner-all" style="background:#2164d1; color:white;width:269px;">Reports</button>
+  <div class="dropdown-content" style="position: fixed;background:#2164d1; color:white;width:269px;" >
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+						
+						<!-- <a href="1report.jsp" data-icon="action" class="ui-corner-all">Reports</a> -->
+						
+</li>
+						
+						
+						<!-- <li ><a href="1manage.jsp"data-icon="user" class="ui-corner-all">Manage</a></li> -->
+						
+						
+						
 						<li>
 						<div class="dropdown">
 							<button data-icon="user" class="ui-corner-all"
@@ -99,48 +102,28 @@
 							</div>
 						</div>
 					</li>
-						
 						</ul>
-						
 					</div>
 				</div>
 				
-
-		<div data-role="main" class="ui-content"
-			style="background-color: none">
-			<div id="my_chart2"
-				style="background-color: none; width: 600px; height: 400px; position: absolute; float: left; top: 50%;"></div>
-			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-			<%
-				JSONArray data2 = dao.generateDeptAvgRateJSON();
-					pageContext.setAttribute("data2", data2);
-			%>
-
-			<script>
-   google.load("visualization", "1", {packages:["corechart"]});
-   google.setOnLoadCallback(drawChart);
+				<nav id="primary_nav_wrap">
+<ul>
  
-	   function drawChart() {
-		    // Create and populate the data table.
-		    var data2 = google.visualization.arrayToDataTable(${data2});
-		    var options2 = {
-		      title: 'Average Bill Rate by Department',
-		      is3D: true,
-		      backgroundColor: { fill: "#f9f9f9" }
-		  
-		    };
-		     // Create and draw the visualization.
-		    new google.visualization.BarChart(
-		      document.getElementById('my_chart2')).draw(data2, options2);
-		  }
-   
-   
-</script>
-		</div>
-
-	</div>
+  <li><a href="#">Menu 1</a>
+    <ul>
+      <li><a href="#">Sub Menu 1</a></li>
+      <li><a href="#">Sub Menu 2</a></li>
+      <li><a href="#">Sub Menu 3</a></li>
+      <li><a href="#">Sub Menu 4</a>
+    </ul>
+</nav>
 
 
-
-</body>
-</html>
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>

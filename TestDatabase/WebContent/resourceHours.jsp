@@ -57,9 +57,7 @@
 			</div>
 		</div>
 			
-				
-				
-					<div id="maintab" class="ui-bar ui-bar-a">
+	<div id="maintab" class="ui-bar ui-bar-a">
 					<p style="text-align:center; font-size: 20px;font-family: 'Comfortaa', cursive;">Financial
 				Reporting Tool</p>
 				<div data-role="navbar" id="tabs">
@@ -67,19 +65,42 @@
 						<li><a href="1home.jsp" data-icon="home" class="ui-corner-all">Home</a></li>
 						<li><a href="1import.jsp" data-icon="info" class="ui-corner-all">Import Timesheets</a></li>
 						<li ><a href="1project.jsp" data-icon="bullets" class="ui-corner-all">Projects</a></li>
-						<li ><a href="1report.jsp" data-icon="action" class="ui-corner-all">Reports</a></li>
-						<li ><a href="1manage.jsp"data-icon="user" class="ui-corner-all">Manage</a></li>
+						
+						
+						<li>
+						<div class="dropdown">
+							<button data-icon="action" class="ui-corner-all"
+								style="background: #2164d1; color: white; width: 269px;">Reports</button>
+							<div class="dropdown-content"
+								style="position: fixed; background: #2164d1; color: white; width: 269px;">
+								<a href="projectSummaryReport.jsp">Project Summary Report</a> <a href="resourceHours.jsp">Resource
+									Analysation Report</a> <a href="billRateDepartment.jsp">Bill Rate For Department </a>
+							</div>
+						</div>
+					</li>
+						<li>
+						<div class="dropdown">
+							<button data-icon="user" class="ui-corner-all"
+								style="background: #2164d1; color: white; width: 269px;">Manage</button>
+							<div class="dropdown-content"
+								style="position: fixed; background: #2164d1; color: white; width: 267px;">
+								<a href="2resources.jsp">Resources</a> 
+								<a href="2clients.jsp">Clients</a> 
+							</div>
+						</div>
+					</li>
 						
 						</ul>
+						
 					</div>
 				</div>
 
 
 
 				
-			<div data-role="main" class="ui-content" style="background-color:#ebf6f9">
+			
 			<div id="my_chart"
-				style="width: 600px; height: 400px; position: absolute; top: 40%; left: 32%;"></div>
+				style="width: 600px; height: 400px; position: absolute; top: 40%;"></div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<%
 				JSONArray data = dao.generateResourceJSON();
@@ -93,7 +114,9 @@
     // Create and populate the data table.
     var data = google.visualization.arrayToDataTable(${data});
     var options = {
-      title: 'Hours Per Resource'
+      title: 'Hours Per Resource',
+      is3D: true,
+      backgroundColor: { fill: "#f9f9f9" }
     };
      // Create and draw the visualization.
     new google.visualization.PieChart(
