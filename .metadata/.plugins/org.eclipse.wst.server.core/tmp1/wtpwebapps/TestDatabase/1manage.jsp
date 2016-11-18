@@ -67,7 +67,7 @@
 				<ul>
 					<li><a href="2resources.jsp" class="ui-corner-all" >Resources</a></li>
 					<li><a href="2clients.jsp" class="ui-corner-all" >Clients</a></li>
-					<li><a href="2categories.jsp" class="ui-corner-all">Categories</a></li>
+					
 						
 				</ul>
 				</div>	
@@ -86,7 +86,7 @@
 					<div class="ui-body ui-body-a">	
 						<a href="2resources.jsp"><button>Resources -<%=size1 %></button></a><br>
 						<a href="2clients.jsp"><button>Clients -<%=size2 %></button></a><br>
-						<a href="2categories.jsp"><button>Categories -<%=size4 %></button></a><br>
+						
 						</div>
 					
 				</div>

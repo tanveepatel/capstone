@@ -47,13 +47,35 @@
 						<li><a href="1home.jsp" data-icon="home" class="ui-corner-all">Home</a></li>
 						<li><a href="1import.jsp" data-icon="info" class="ui-corner-all">Import Timesheets</a></li>
 						<li ><a href="1project.jsp" data-icon="bullets" class="ui-corner-all">Projects</a></li>
-						<li ><a href="1report.jsp" data-icon="action" class="ui-corner-all">Reports</a></li>
-						<li ><a href="1manage.jsp"data-icon="user" class="ui-corner-all">Manage</a></li>
+						
+						
+						<li>
+						<div class="dropdown">
+							<button data-icon="action" class="ui-corner-all"
+								style="background: #2164d1; color: white; width: 269px;">Reports</button>
+							<div class="dropdown-content"
+								style="position: fixed; background: #2164d1; color: white; width: 269px;">
+								<a href="projectSummaryReport.jsp">Project Summary Report</a> <a href="resourceHours.jsp">Resource
+									Analysation Report</a> <a href="billRateDepartment.jsp">Bill Rate For Department </a>
+							</div>
+						</div>
+					</li>
+						<li>
+						<div class="dropdown">
+							<button data-icon="user" class="ui-corner-all"
+								style="background: #2164d1; color: white; width: 269px;">Manage</button>
+							<div class="dropdown-content"
+								style="position: fixed; background: #2164d1; color: white; width: 267px;">
+								<a href="2resources.jsp">Resources</a> 
+								<a href="2clients.jsp">Clients</a> 
+							</div>
+						</div>
+					</li>
 						
 						</ul>
+						
 					</div>
 				</div>
-				
 		<div data-role="main" class="ui-content" style="background-color:light-white">
 			<form method="post" action="editProjectController" style="width: 20%; margin: 0 auto; width: 100%; text-align: left" style="width: 20%; margin: 0 auto; width: 100%; text-align: left">
 			<h3>Edit Project</h3>
