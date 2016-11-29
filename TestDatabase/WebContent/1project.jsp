@@ -81,12 +81,12 @@
 				</div>
 				
 									
-		<div data-role="main" class="ui-content" style="background-color:light-white">
+		<div data-role="main" class="ui-content" style="background-color:white">
 			<a href="addProject.jsp" data-role="button" data-icon="plus"
 				data-iconpos="left" style="width: 100px;">Add Project</a>
 			<div>		
 				<h2>Project -<%=size1 %></h2>
-		<table cellspacing="25">
+		<table id="id" cellspacing="25" >
 		<tr><b>
 		
 		<td><b>Project Name</b></td>

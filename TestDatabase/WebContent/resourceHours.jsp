@@ -103,7 +103,7 @@
 				style="width: 600px; height: 400px; position: absolute; top: 40%;"></div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<%
-				JSONArray data = dao.generateResourceJSON();
+				JSONArray data = dao.generateJSON1();
 				pageContext.setAttribute("data", data);
 			%>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -114,7 +114,7 @@
     // Create and populate the data table.
     var data = google.visualization.arrayToDataTable(${data});
     var options = {
-      title: 'Hours Per Resource',
+      title: 'Total Budget Per Project',
       is3D: true,
       backgroundColor: { fill: "#f9f9f9" }
     };

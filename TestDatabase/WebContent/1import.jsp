@@ -1,4 +1,4 @@
-<%-- 
+	<%-- 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" 
 pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.*"%>
@@ -273,21 +273,26 @@ pageEncoding="ISO-8859-1"%>
 				
 		
 	<div data-role="main" class="ui-content" id="welcomepage" 
-		style="background-color:light-white">
+		style="background-color:white">
 			<!-- #d8ecf3,#c4e3ed to try -->
 		
-		<form method="post" action="UploadController" enctype="multipart/form-data" data-ajax="false" style="width: 300px" accept=".csv">
-			Select file to upload: <input type="file" name="uploadFile" /> 
-			<input data-ajax="false" type="submit" value="Upload"/>
+		
+		<form method="post" action="UploadController" enctype="multipart/form-data" data-ajax="false" style="width: 600px" accept=".csv">
+		<table>
+		<tr>
+			<td> <h4>Select File to Upload:</h4> </td><td> <input type="file" name="uploadFile" /> </td>
+			<td><input data-ajax="false" type="submit" value="Upload"/></td>
+			</tr>
+			</table>
 		</form>
 			
       	
       	
-      	 <form class="ui-filterable">
+      	 <form class="ui-filterable" style="width: 44.3%;">
   <input id="myFilter" data-type="search" placeholder="Search by Client Name or Project name">
 </form>
       	<br>
-			<table data-filter="true" data-input="#myFilter" id= "myTable" style="width: 100%; margin: auto; left: 50%;background-color:#40bf80;" class="table">
+			<table data-filter="true" data-input="#myFilter" id= "myTable" style="width: 100%; background-color: #4CAF50;" class="table">
 				<%
 					for (int i = 0; i < size1; i++) {
 				%>
@@ -316,8 +321,8 @@ pageEncoding="ISO-8859-1"%>
 				<tr>
 				
 
-					<td>
-						<div data-role="collapsible">
+					<td >
+						<div  data-role="collapsible"  >
 							<h1>${projectName}<span class="ui-li-count">Total hours: ${projectSum}</h1>
 							<p hidden>${name}</p>
 							<h4>Project Resources:</h4>

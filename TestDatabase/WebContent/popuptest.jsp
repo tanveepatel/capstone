@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/style3.css">
+<link rel="stylesheet" type="text/css" href="css/style1.css">
   <style>
     label, input { display:block; }
     input.text { margin-bottom:12px; width:95%; padding: .4em; }
@@ -210,5 +210,27 @@
 <button id="create-user">Create new user</button>
  
  
+ 
+ <ul>
+    <li>
+        <a href="">Birds</a>
+        <ul>
+            <li><a href="">Ratites</a></li>
+            <li><a href="">Fowl</a></li>
+            <li><a href="">Neoaves</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="">Mammals</a>
+        <ul>
+            <li><a href="">Monotremes</a></li>
+            <li><a href="">Marsupials</a></li>
+            <li><a href="">Placentals</a></li>
+        </ul>
+    </li>
+    <!-- etc. -->
+</ul>
+
+
 </body>
 </html>
