@@ -210,7 +210,7 @@ pageEncoding="ISO-8859-1"%>
 </head>
 <body>
 <!-- Import -->
-		<div data-role="page" id="import">
+		<div data-role="page" id="import" style="background-color: white;">
 <% 
 				DatabaseOperations dao=new DatabaseOperations();
 				List<FileData> filedata = new FileData();
@@ -234,11 +234,11 @@ pageEncoding="ISO-8859-1"%>
 				
 				
 					<div id="maintab" class="ui-bar ui-bar-a">
-					<p style="text-align:center; font-size: 20px;font-family: 'Comfortaa', cursive;">Financial
-				Reporting Tool</p>
+					<h3 style="font-size: 20px;text-align:center; margin-bottom:10px;font-family: 'Comfortaa', cursive;display:block">Financial Reporting Tool</h3>
+			
 				<div data-role="navbar" id="tabs">
 				<ul>
-						<li><a href="1home.jsp" data-icon="home" class="ui-corner-all">Home</a></li>
+						<li><a href="1home.jsp" data-icon="home" class="ui-corner-all" rel="external">Home</a></li>
 						<li><a href="1import.jsp" data-icon="info" class="ui-corner-all">Import Timesheets</a></li>
 						<li ><a href="1project.jsp" data-icon="bullets" class="ui-corner-all">Projects</a></li>
 						
@@ -249,8 +249,8 @@ pageEncoding="ISO-8859-1"%>
 								style="background: #2164d1; color: white; width: 269px;">Reports</button>
 							<div class="dropdown-content"
 								style="position: fixed; background: #2164d1; color: white; width: 269px;">
-								<a href="projectSummaryReport.jsp">Project Summary Report</a> <a href="resourceHours.jsp">Resource
-									Analysation Report</a> <a href="billRateDepartment.jsp">Bill Rate For Department </a>
+								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a> <a href="resourceHours.jsp" rel="external">Resource
+									Analysation Report</a> <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
 							</div>
 						</div>
 					</li>
@@ -287,12 +287,11 @@ pageEncoding="ISO-8859-1"%>
 		</form>
 			
       	
-      	
       	 <form class="ui-filterable" style="width: 44.3%;">
   <input id="myFilter" data-type="search" placeholder="Search by Client Name or Project name">
 </form>
       	<br>
-			<table data-filter="true" data-input="#myFilter" id= "myTable" style="width: 100%; background-color: #4CAF50;" class="table">
+			<table id= "myTable" data-input="#myFilter" style="width: 100%; margin: auto; left: 50%; background-color:#40bf80;border-radius:15px" class="table">
 				<%
 					for (int i = 0; i < size1; i++) {
 				%>
@@ -303,8 +302,7 @@ pageEncoding="ISO-8859-1"%>
 				
 				
 				<%
-						String name = clients.get(i).getClientName();
-						pageContext.setAttribute("name", name);
+					String name = clients.get(i).getClientName();
 						List<Project> clientProjects = dao.getAllClientProjects(name);
 						System.out.println(name);
 						for (int j = 0; j < clientProjects.size(); j++) {
@@ -321,11 +319,10 @@ pageEncoding="ISO-8859-1"%>
 				<tr>
 				
 
-					<td >
-						<div  data-role="collapsible"  >
+					<td>
+						<div data-role="collapsible">
 							<h1>${projectName}<span class="ui-li-count">Total hours: ${projectSum}</h1>
-							<p hidden>${name}</p>
-							<h4>Project Resources:</h4>
+						
 							<%
 							System.out.println("running from import.jsp");
 							
@@ -340,17 +337,15 @@ pageEncoding="ISO-8859-1"%>
 									
 							%>
 							
-							<div data-role="collapsible">
-								<h4>${resourceName}<span class="ui-li-count">Total hours: ${sum}</span>
+							<div style="background-color:#f2f2f2; border-radius:10px;padding-left:10px">
+								<h4>${resourceName}<span>  - Total hours: ${sum}</span>
 								</h4>
-								<h4>Time Logged:</h4>
-								<table>
-									<tr>
-										<th >Date &nbsp&nbsp&nbsp&nbsp&nbsp</th> 
-										<th>&nbsp &nbsp &nbsp&nbsp&nbsp Hours</th>
-									</tr>
-								</table>
-									<%			
+								<b>Time Logged:</b></br>
+								
+										Date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+										Hours</br>
+								
+								<%			
 									for (int l = 0; l < filedata.size(); l++) {
 													String fname = filedata.get(l).getFname();
 													String projectname = filedata.get(l).getProject();
@@ -364,12 +359,9 @@ pageEncoding="ISO-8859-1"%>
 														pageContext.setAttribute("timeRecord", timeRecord);
 														pageContext.setAttribute("hours", hours);
 								%>
-								<table>
-									<tr>
-										<th> ${timeRecord}</th> 
-										<th>&nbsp&nbsp&nbsp ${hours}</th> 
-									</tr>
-								</table>
+								
+								${timeRecord} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+								${hours} <br>
 
 								<%
 									}

@@ -26,7 +26,7 @@
 <body>
 
 	<!-- Home -->
-	<div data-role="page" id="home">
+	<div data-role="page" id="home" style="background-color: white;">
 		<% 
 				DatabaseOperations dao=new DatabaseOperations();
 				
@@ -52,7 +52,7 @@
 				<h3 style="font-size: 20px;text-align:center; margin-bottom:10px;font-family: 'Comfortaa', cursive;display:block">Financial Reporting Tool</h3>
 			<div data-role="navbar" id="tabs">
 				<ul>
-					<li><a href="1home.jsp" data-icon="home" class="ui-corner-all">Home</a></li>
+					<li><a href="1home.jsp" data-icon="home" class="ui-corner-all" rel="external">Home</a></li>
 					<li><a href="1import.jsp" data-icon="info"
 						class="ui-corner-all">Import Timesheets</a></li>
 					<li><a href="1project.jsp" data-icon="bullets"
@@ -65,9 +65,9 @@
 								style="background: #2164d1; color: white; width: 269px;">Reports</button>
 							<div class="dropdown-content"
 								style="position: fixed; background: #2164d1; color: white; width: 269px;">
-								<a href="projectSummaryReport.jsp">Project Summary Report</a> <a
-									href="resourceHours.jsp">Resource Analysation Report</a> <a
-									href="billRateDepartment.jsp">Bill Rate For Department </a>
+								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a> <a
+									href="resourceHours.jsp" rel="external">Resource Analysation Report</a> <a
+									href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
 							</div>
 						</div>
 					</li>
@@ -178,7 +178,7 @@
     var options = {
       title: 'Hours Per Project',
       is3D: true,
-      backgroundColor: { fill: "#f9f9f9" }
+      backgroundColor: { fill: "white" }
     };
      // Create and draw the visualization.
     new google.visualization.PieChart(
@@ -192,7 +192,7 @@
 	    var options = {
 	      title: 'Hours Per Resource',
 	      is3D: true,
-	      backgroundColor: { fill: "#f9f9f9" }
+	      backgroundColor: { fill: "white" }
 	    };
 	     // Create and draw the visualization.
 	    new google.visualization.PieChart(
@@ -200,18 +200,7 @@
 	  }
 
 </script>
-
-
-
-
-
-
-
-
-		</div>
-
 	</div>
-
 
 	</div>
 
