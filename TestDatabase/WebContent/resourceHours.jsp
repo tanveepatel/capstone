@@ -95,7 +95,7 @@
 					</div>
 				</div>
 	
-			
+		<h1 style="font-size: 25px;text-align:center;font-family: 'Georgia',cursive">Budget Analysis</h1>	
 			<div id="my_chart"
 				style="width: 600px; height: 400px; position: absolute;top:40%"></div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -105,7 +105,7 @@
 			%>
 			
 			<div id="my_chart1"
-				style="position:fixed;width: 600px; height: 400px;left:500px;top:50%;"></div>
+				style="position:fixed;left:650px;top:50%;"></div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<%
 				JSONArray data1 = dao.generateJSON2();
@@ -119,28 +119,25 @@
    
    function drawChart() {
     // Create and populate the data table.
+    
+     
     var data = google.visualization.arrayToDataTable(${data});
+    data.setProperty(0, 0, 'style', 'background-color: red;');
+    
     var options = {
       title: 'Total Budget Per Project',
       is3D: true,
-      backgroundColor: { fill: "white" }
+      backgroundColor: { fill: "white" },
+      
     };
+    
+   
      // Create and draw the visualization.
     new google.visualization.PieChart(
       document.getElementById('my_chart')).draw(data, options);
    }
      
- // Create and populate the data table.
-    /* var data = google.visualization.arrayToDataTable(${data1});
-    var options = {
-      title: 'Table Graph',
-      is3D: true,
-      backgroundColor: { fill: "white" }
-    };
-     // Create and draw the visualization.
-    new google.visualization.PieChart(
-      document.getElementById('my_chart1')).draw(data, options); */
- // }
+ 
      google.load("visualization", "1", {packages:["table"]});
       //google.charts.load('current', {'packages':['table']});
       google.setOnLoadCallback(drawTable);
