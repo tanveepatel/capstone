@@ -20,7 +20,7 @@
 <body>
 
 	<!-- Client -->
-	<div data-role="page" id="client">
+	<div data-role="page" id="client" style="background-color: white;">
 <% 
 				DatabaseOperations dao=new DatabaseOperations();
 				List<Client> clients = new Client();
@@ -78,7 +78,7 @@
 			<a href="addClient.jsp" data-role="button" data-icon="plus"
 				data-iconpos="left" style="width: 100px;">Add Client</a>
 			<div>
-			<h2>Client -<%=size1 %></h2>
+			<h2> Total Clients -<%=size1 %></h2>
 			<table cellspacing="25">
 				<tr><b>
 				<td><b>Client Name</b></td>

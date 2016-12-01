@@ -20,7 +20,7 @@
 <body>
 
 	<!-- Add Project -->
-	<div data-role="page" id="addProject">
+	<div data-role="page" id="addProject" style="background-color: white;">
 <% 
 				DatabaseOperations dao=new DatabaseOperations();
 				List<Project> projects = new Project();

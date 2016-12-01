@@ -86,7 +86,7 @@
 				data-iconpos="left" style="width: 100px;">Add Project</a>
 			<div>		
 				<h2>Project -<%=size1 %></h2>
-		<table id="id" cellspacing="25" >
+		<table id="tableStyle" >
 		<tr><b>
 		
 		<td><b>Project Name</b></td>
@@ -95,7 +95,7 @@
 		<td><b>Project code</b></td>
 		<td><b>Budget</b></td>
 		<td><b>Dates</b></td>
-		<td>&nbsp;</td><td>&nbsp;</td></b></tr>
+		
 				<%
 	    	for(int i=0; i<size1 ;i++)
 	    	{

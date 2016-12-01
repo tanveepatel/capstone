@@ -20,7 +20,7 @@
 <body>
 
 	<!-- Add Project -->
-	<div data-role="page" id="editProject">
+	<div data-role="page" id="editProject" style="background-color: white;">
 		<% String pname = request.getParameter("pname");
 		DatabaseOperations dao=new DatabaseOperations();
 		Project project = new Project();

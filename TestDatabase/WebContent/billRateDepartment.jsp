@@ -29,7 +29,7 @@
 <body>
 
 	<!-- Report -->
-	<div data-role="page" id="report">
+	<div data-role="page" id="report" style="background-color: white;">
 		<%
 			DatabaseOperations dao=new DatabaseOperations();
 				List<Project> projects = new Project();
@@ -50,7 +50,7 @@
 
 				String user = "root";
 
-				String password = "$@rita201091";
+				String password = "root";
 
 				String sql = "select name from project";
 				String sql2 = "select fname from resource";
@@ -106,7 +106,7 @@
 		<div data-role="main" class="ui-content"
 			style="background-color: none">
 			<div id="my_chart2"
-				style="background-color: none; width: 600px; height: 400px; position: absolute; float: left; top: 50%;"></div>
+				style="background-color: none; width: 600px; height: 400px; position: absolute; float: left;top:35%"></div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<%
 				JSONArray data2 = dao.generateDeptAvgRateJSON();
@@ -123,7 +123,7 @@
 		    var options2 = {
 		      title: 'Average Bill Rate by Department',
 		      is3D: true,
-		      backgroundColor: { fill: "#f9f9f9" }
+		      backgroundColor: { fill: "white" }
 		  
 		    };
 		     // Create and draw the visualization.

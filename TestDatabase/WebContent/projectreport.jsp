@@ -19,7 +19,7 @@
 <title>Project Summary Report</title>
 </head>
 <body>
-<div data-role="page" id="projectreport">
+<div data-role="page" id="projectreport" style="background-color: white;">
 
 <% 
 				DatabaseOperations dao=new DatabaseOperations();

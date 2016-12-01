@@ -765,6 +765,102 @@ public class DatabaseOperations {
 		
 		
 	}
+	
+	public int editProject(String projectname, String client,
+			String projectcode, String datestart, String dateend, String notes,
+			String invoice, String permission, String budget, String team) {
+		// TODO Auto-generated method stub
+		int projectId;
+		int res = 0;
+		try {
+			projectId = getProjectId(projectname);
+			System.out.println(projectId + " from edit project method");
+			Connection c = Database.getConnection();
+			Statement st = (Statement) c.createStatement();
+			String sql = "UPDATE project SET client='" + client + "', name='"
+					+ projectname + "', code='" + projectcode + "', sdate='"
+					+ datestart + "', edate='" + dateend + "',notes='" + notes
+					+ "', invoice='" + invoice + "', permissions='"
+					+ permission + "', budget='" + budget + "', team='" + team
+					+ "' WHERE id=" + projectId + "";
+			System.out.println(sql);
+			res = st.executeUpdate(sql);
+			c.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return res;
+	}
+	public Client getClient(String cname) {
+		// TODO Auto-generated method stub
+		System.out.println("In getClient method--");
+    	
+		Client res = new Client();
+        try {
+            Statement statement = (Statement) connection.createStatement();
+            ResultSet rs = statement.executeQuery("select * from clients where clientname='"+cname+"'");
+            System.out.println(rs);
+            while (rs.next()) {
+                
+        		res.setClientName(rs.getString("clientname"));
+        		res.setAddress(rs.getString("address"));
+        		res.setCurrency(rs.getString("currency"));
+        		System.out.println("From getClient method--"+rs.getString("clientname")+"---"+rs.getString("address")+"---"+rs.getString("currency"));
+        	
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println(res);
+        return res;
+	}
+
+	public int getClientId(String clientName) {
+		// TODO Auto-generated method stub
+		System.out.println("From getClientId method--"+clientName);
+		int id=0;
+		Connection c = Database.getConnection();
+    	Statement st;
+		try {
+			st = (Statement) c.createStatement();
+			String sql="SELECT id FROM clients WHERE clientname='"+clientName+"'";
+			System.out.println(sql);
+	    	ResultSet res =st.executeQuery(sql);
+	    	while(res.next())
+	    	{
+	    		id=res.getInt("id");
+	    		System.out.println(id+" from get client id method");
+	    	}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+		return id;
+	}
+	
+	public int editClient(int id,String clientName, String address, String currancy)  {
+		// TODO Auto-generated method stub
+		
+		int res=0;
+		try {
+			//System.out.println(+" from edit clients method");
+			Connection c = Database.getConnection();
+	    	Statement st = (Statement) c.createStatement();
+			String sql ="UPDATE clients SET clientname='"+clientName+"', address='"+address+"', currency='"+currancy+"' WHERE id="+id+"";
+	
+			System.out.println(sql); 
+			res =st.executeUpdate(sql);
+			c.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return res;
+	}
 
 	public List<FileData> getAllFileData() {
 		// TODO Auto-generated method stub
@@ -1364,7 +1460,88 @@ public class DatabaseOperations {
 		return list;
 	}
 	
-
 	
+	public JSONArray generateJSON1() {
+
+		String sql = "SELECT distinct(name) as project, sum(budget) as budget from project group by name";
+		JSONArray list = new JSONArray();
+		ArrayList arrTest = null;
+
+		try {
+			ResultSet rs = null;
+			PreparedStatement stm1 = connection.prepareStatement(sql);
+			rs = stm1.executeQuery(sql);
+			int i = 0;
+			while (rs.next()) {
+				// JSONObject obj=new JSONObject();
+				arrTest = new ArrayList();
+				if (i == 0) {
+					arrTest.add("Projects");
+					arrTest.add("Budget");
+					i++;
+				} else {
+					arrTest.add(rs.getString("project"));
+					arrTest.add(rs.getDouble("budget"));
+				}
+				list.add(arrTest);
+			}
+
+			System.out.print("JSON Array " + list);
+		} catch (Exception ex) {
+			System.out.println("<h1>" + ex + "</g1>");
+		}
+		return list;
+	}
+	
+	public JSONArray generateJSON2() {
+
+		String sql = "select name, budget, client, sum(hours) as TotalHours from project left join filedata on name=project group by project;";
+		JSONArray list = new JSONArray();
+		ArrayList arrTest = null;
+
+		try {
+			System.out.print("running from json2");
+			ResultSet rs = null;
+			PreparedStatement stm1 = connection.prepareStatement(sql);
+			rs = stm1.executeQuery(sql);
+			int i = 0;
+			while (rs.next()) {
+				// JSONObject obj=new JSONObject();
+				arrTest = new ArrayList();
+				if (i == 0) {
+					arrTest.add("Projects");
+					arrTest.add("Budget");
+					arrTest.add("Client");
+					arrTest.add("Total Hours");
+					i++;
+				} else {
+					arrTest.add(rs.getString("name"));
+					arrTest.add(rs.getDouble("budget"));
+					arrTest.add(rs.getString("client"));
+					arrTest.add(rs.getDouble("TotalHours"));
+					
+				}
+				list.add(arrTest);
+			}
+
+			System.out.print("JSON Array " + list);
+		} catch (Exception ex) {
+			System.out.println("<h1>" + ex + "</g1>");
+		}
+		return list;
+	}
+	
+	
+
+	public void displayProperCSVFileMessage() {
+		 JOptionPane.showMessageDialog ( 
+					null, "Please upload proper csv file", "  Upload was unsuccessful", JOptionPane.ERROR_MESSAGE);
+     	 
+    	       // System.exit(0);
+//     	
+		
+		
+		
+		}
 	
 }

@@ -18,7 +18,7 @@
 </head>
 <body>
 	<!-- Project Summary Report -->
-	<div data-role="page" id="projectSummaryReport">
+	<div data-role="page" id="projectSummaryReport" style="background-color: white;">
 <% 
 				DatabaseOperations dao=new DatabaseOperations();
 				List<Project> projects = new Project();

@@ -1,4 +1,4 @@
-package databaseOp;
+ package databaseOp;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,9 +10,10 @@ import javax.swing.JOptionPane;
 
 import com.mysql.jdbc.Statement;
 
+
 public class readFile {
 
-   
+	private DatabaseOperations dao;
     	
     public void rFile(String path) throws ClassNotFoundException, IllegalAccessException, InstantiationException, SQLException
     	{
@@ -23,6 +24,7 @@ public class readFile {
         String line = "";
         String cvsSplitBy = ",";
         String date, fname,lname,project,hours;
+         
         
 		
         
@@ -43,11 +45,24 @@ public class readFile {
                  String lname1= lname.replace(lname.charAt(lname.length()-1), ' ');
                  project=fileData[3];
                  hours=fileData[5];
+                 
+                 System.out.println("length is " +fileData.length);
+                 
+                 if (fileData.length >7){
+                	dao.displayProperCSVFileMessage();
+                 }
+                 
+
 //                 if(fileData[6]!= null){
-//                	 JOptionPane.showMessageDialog ( 
+//                 JOptionPane.showMessageDialog ( 
 //         					null, "Please upload proper csv file", "  Upload was unsuccessful", JOptionPane.ERROR_MESSAGE);
+//                	 
+//                	        System.exit(0);
+//                	
 //                 }
                  
+                
+                 else{
                  System.out.println("inside before indertfile data row"+date+" "+fname+" "+lname+" "+project+" "+hours);
                  DatabaseOperations dbop=new DatabaseOperations();
                  
@@ -55,6 +70,8 @@ public class readFile {
                  System.out.println(" "+date+" "+fname+" "+lname+" "+project+" "+hours);
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
             }
+            }
+            
 
         } 
         catch (FileNotFoundException e) 

@@ -20,7 +20,7 @@
 <body>
 
 	<!-- Resource -->
-	<div data-role="page" id="resource">
+	<div data-role="page" id="resource" style="background-color: white;">
 <% 
 				DatabaseOperations dao=new DatabaseOperations();
 				List<Resource> resources = new Resource();
@@ -80,7 +80,7 @@
 			<a href="addPerson.jsp" data-role="button" data-icon="plus"
 				data-iconpos="left" style="width: 200px;">Add Resource</a>
 			<div>
-			<h2>Resource -<%=size1 %></h2>
+			<h2>Total Resources -<%=size1 %></h2>
 		<table cellspacing="25">
 		<tr><b>
 		<td><b>First Name&nbsp;&nbsp;</b></td>

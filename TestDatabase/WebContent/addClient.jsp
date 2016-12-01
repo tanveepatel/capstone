@@ -16,7 +16,7 @@
 <body>
 
 	<!-- Add Client -->
-	<div data-role="page" id="addClient">
+	<div data-role="page" id="addClient" style="background-color: white;">
 <div class="thumbnail">
 			<img src="css/themes/images/t1logo.png" />
 			<div style="float:right">

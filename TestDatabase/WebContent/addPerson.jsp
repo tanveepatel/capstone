@@ -19,7 +19,7 @@
 <body>
 
 	<!-- Add Resource -->
-<div data-role="page" id="addProject">
+<div data-role="page" id="addProject" style="background-color: white;">
 
 		<div class="thumbnail">
 			<img src="css/themes/images/t1logo.png" />
