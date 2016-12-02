@@ -73,7 +73,7 @@
 							<div class="dropdown-content"
 								style="position: fixed; background: #2164d1; color: white; width: 269px;">
 								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a> 
-								<a href="resourceHours.jsp" rel="external">Resource Analysation Report</a> 
+								<a href="resourceHours.jsp" rel="external">Budget Analysis</a> 
 								<a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
 							</div>
 						</div>
@@ -95,7 +95,9 @@
 					</div>
 				</div>
 	
-		<h1 style="font-size: 25px;text-align:center;font-family: 'Georgia',cursive">Budget Analysis</h1>	
+		<h3 style="text-align:center;font-family: 'Comfortaa',cursive">Budget Analysis</h3>	
+			
+			<div style="background-color: blue">
 			<div id="my_chart"
 				style="width: 600px; height: 400px; position: absolute;top:40%"></div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -111,7 +113,7 @@
 				JSONArray data1 = dao.generateJSON2();
 				pageContext.setAttribute("data1", data1);
 			%>
-			
+			</div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<script>
    google.load("visualization", "1", {packages:["corechart"]});
@@ -151,7 +153,7 @@
 	    };
 	     // Create and draw the visualization.
 	    new google.visualization.Table(
-	      document.getElementById('my_chart1')).draw(data, options);
+	      document.getElementById('my_chart1')).draw(data, {showRowNumber: true, width: '100%', height: '100%'});
    }
    
 </script>

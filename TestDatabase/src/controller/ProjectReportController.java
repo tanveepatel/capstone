@@ -20,9 +20,11 @@ import databaseOp.DatabaseOperations;
 @WebServlet("/ProjectReportController")
 public class ProjectReportController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	String jspToRedirect="/projectreport.jsp";
 	private DatabaseOperations dao;
 	 ResultSet res = null;
 	 double res1 = 0.0;
+	 //ResultSet res2 = null;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -51,7 +53,8 @@ public class ProjectReportController extends HttpServlet {
 		
 		String pname= request.getParameter("name");
 		System.out.println("value of name" +pname);
-		if(pname.equals("Select all Project")){
+		if(pname.equals("Select all Project"))
+		{
 			try {
 				res = dao.displayAllProjects();
 				res1 = dao.displaySumOfBudget();
@@ -60,26 +63,28 @@ public class ProjectReportController extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			jspToRedirect="/projectreport.jsp";
 		}
+		
 		else{
-			
-		
-		
 		
 		//String fund=request.getParameter("fund");
 		
 		try{
-			res = dao.displayProjectReport(pname);
+			res = dao.displaySingleProject(pname);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		jspToRedirect="/singleProject.jsp";
 		}
 		System.out.println(res);
+		//System.out.println(res2);
 		
 		request.setAttribute("result", res);
-		//request.setAttribute("total",res1);
-		RequestDispatcher view2 = request.getRequestDispatcher("/projectreport.jsp");
+		
+	request.setAttribute("pname",pname);
+		RequestDispatcher view2 = request.getRequestDispatcher(jspToRedirect);
 		view2.forward(request, response);
 		
 	}

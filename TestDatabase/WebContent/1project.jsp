@@ -58,8 +58,9 @@
 								style="background: #2164d1; color: white; width: 269px;">Reports</button>
 							<div class="dropdown-content"
 								style="position: fixed; background: #2164d1; color: white; width: 269px;">
-								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a> <a href="resourceHours.jsp" rel="external">Resource
-									Analysation Report</a> <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
+								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a>
+								 <a href="resourceHours.jsp" rel="external">Budget Analysis</a> 
+								 <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
 							</div>
 						</div>
 					</li>
@@ -86,7 +87,7 @@
 				data-iconpos="left" style="width: 100px;">Add Project</a>
 			<div>		
 				<h2>Project -<%=size1 %></h2>
-		<table id="tableStyle" >
+		<table class="hoverTable" >
 		<tr><b>
 		
 		<td><b>Project Name</b></td>
@@ -95,7 +96,7 @@
 		<td><b>Project code</b></td>
 		<td><b>Budget</b></td>
 		<td><b>Dates</b></td>
-		
+		<td>&nbsp;</td><td>&nbsp;</td></b></tr>
 				<%
 	    	for(int i=0; i<size1 ;i++)
 	    	{

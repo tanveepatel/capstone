@@ -51,7 +51,7 @@
 
 	<div class="form">
 
-		<form method="post" action="loginValidate.jsp" ">
+		<form method="post" action="loginValidate.jsp">
 			User Name<br>
 			<input type="text" name="name" placeholder="username" /> 
 			Password<br>
@@ -70,7 +70,7 @@
 					}
 				%>
 			
-			<button type="submit" value="Submit" >Log In</button>
+			<button type="submit" value="Submit" rel="external" >Log In</button>
 					</form>
 					
 					</div>

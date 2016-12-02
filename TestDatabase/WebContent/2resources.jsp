@@ -54,7 +54,7 @@
 							<div class="dropdown-content"
 								style="position: fixed; background: #2164d1; color: white; width: 269px;">
 								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a>
-								 <a href="resourceHours.jsp" rel="external">Resource Analysation Report</a>
+								 <a href="resourceHours.jsp" rel="external">Budget Analysis</a>
 									 <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
 							</div>
 						</div>
@@ -78,10 +78,10 @@
 				
 		<div data-role="main" class="ui-content" style="background-color:light-white">
 			<a href="addPerson.jsp" data-role="button" data-icon="plus"
-				data-iconpos="left" style="width: 200px;">Add Resource</a>
+				data-iconpos="left" style="width:150px;">Add Resource</a>
 			<div>
 			<h2>Total Resources -<%=size1 %></h2>
-		<table cellspacing="25">
+		<table class="hoverTable">
 		<tr><b>
 		<td><b>First Name&nbsp;&nbsp;</b></td>
 		<td><b>Last Name&nbsp;&nbsp;</b></td>
@@ -132,7 +132,7 @@
 					</b>
 					</td>
 					<td>
-						<a href="editPerson.jsp?email=<%=((Resource) resources.get(i)).getEmail()%>"><input type="button" value="Edit" style="width: 100px;"></a>
+						<a href="editResource.jsp?email=<%=((Resource) resources.get(i)).getEmail()%>"><input type="button" value="Edit" style="width: 100px;"></a>
 					</td>
 					<td> 
 						<a href="deletePerson.jsp?email=<%=((Resource) resources.get(i)).getEmail()%>&fname= <%=((Resource) resources.get(i)).getFname()%>&lname=<%=((Resource) resources.get(i)).getLname()%>&department=<%=((Resource) resources.get(i)).getDepartment()%>&costRate=<%=((Resource) resources.get(i)).getCostRate()%>&billRate=<%=((Resource) resources.get(i)).getBillRate()%>&permission=<%=((Resource) resources.get(i)).getPermissions()%>"><input type="button" value="Delete" style="width: 100px;"></a>

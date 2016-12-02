@@ -66,8 +66,9 @@
 								style="background: #2164d1; color: white; width: 269px;">Reports</button>
 							<div class="dropdown-content"
 								style="position: fixed; background: #2164d1; color: white; width: 269px;">
-								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a> <a href="resourceHours.jsp" rel="external">Resource
-									Analysation Report</a> <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
+								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a>
+								 <a href="resourceHours.jsp" rel="external">Budget Analysis</a> 
+								 <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
 							</div>
 						</div>
 					</li>

@@ -66,7 +66,7 @@
 							<div class="dropdown-content"
 								style="position: fixed; background: #2164d1; color: white; width: 269px;">
 								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a> <a
-									href="resourceHours.jsp" rel="external">Resource Analysation Report</a> <a
+									href="resourceHours.jsp" rel="external">Budget Analysist</a> <a
 									href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
 							</div>
 						</div>
@@ -92,7 +92,7 @@
 			<h4 id="subwelcome" style="margin:20px;font-size:20px;font-family: 'Comfortaa', cursive">Here's How to Get Started:</h4>
 			<div id="dashboard" style="float:left;margin:20px">
 				<div class="ui-corner-all custom-corners" style="width: 230px;">
-					<div class="ui-bar ui-bar-a" style="background: #40bf80">
+					<div class="ui-bar ui-bar-a" style="background: #40bf80" >
 						<h3>
 							Total Projects:&nbsp;<%=projects%></h3>
 					</div>
@@ -189,20 +189,20 @@
 	    // Create and populate the data table.
 	    var data = google.visualization.arrayToDataTable(${data1});
 	    
-	    var options = {
+	    var options2 = {
 	      title: 'Hours Per Resource',
 	      is3D: true,
 	      backgroundColor: { fill: "white" }
 	    };
 	     // Create and draw the visualization.
 	    new google.visualization.PieChart(
-	      document.getElementById('my_chart1')).draw(data, options);
+	      document.getElementById('my_chart1')).draw(data, options2);
 	  }
 
 </script>
 	</div>
 
-	</div>
+</div>
 
 </body>
 </html>

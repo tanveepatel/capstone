@@ -43,8 +43,8 @@
 								style="background: #2164d1; color: white; width: 269px;">Reports</button>
 							<div class="dropdown-content"
 								style="position: fixed; background: #2164d1; color: white; width: 269px;">
-								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a> <a href="resourceHours.jsp" rel="external">Resource
-									Analysation Report</a> <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
+								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a>
+								 <a href="resourceHours.jsp" rel="external">Budget Analysis</a> <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
 							</div>
 						</div>
 					</li>
@@ -68,9 +68,9 @@
 		<div data-role="main" class="ui-content" style="background-color:light-white">		
 			<form method="post" action="ClientController " name="formClient"
 				style="width: 20%; margin: 0 auto; width: 100%; text-align: left">
-				<h3>Add Client</h3>
+				<h3 style="margin-left:550px">Add Client</h3>
 				<div>
-					<table>
+					<table style="margin-top:20px;background-color:#40bf80;border-radius:15px;padding:20px;margin-left:450px">
 					<tr>
 						<td><label for="cname">Name:</label></td> 
 						<td><input type="text" name="name" id="name" required></td>

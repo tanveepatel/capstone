@@ -18,6 +18,7 @@
 	String dbUsertype;%>
 
 	<%
+
 		Connection con = null;
 
 		PreparedStatement ps = null;
@@ -111,7 +112,9 @@
 	</center>
 
 	<%
+	 
 		getServletContext().getRequestDispatcher("/loginForm.jsp").include(request, response);
+	
 
 		}
 	%>

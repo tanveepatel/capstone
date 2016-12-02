@@ -81,8 +81,8 @@
 								style="background: #2164d1; color: white; width: 269px;">Reports</button>
 							<div class="dropdown-content"
 								style="position: fixed; background: #2164d1; color: white; width: 269px;">
-								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a> <a href="resourceHours.jsp" rel="external">Resource
-									Analysation Report</a> <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
+								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a> 
+								<a href="resourceHours.jsp" rel="external">Budget Analysis</a> <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
 							</div>
 						</div>
 					</li>
@@ -105,12 +105,23 @@
 
 		<div data-role="main" class="ui-content"
 			style="background-color: none">
+			<h3 style="text-align:center;font-family: 'Comfortaa',cursive">Bill Rate by Department</h3>
 			<div id="my_chart2"
-				style="background-color: none; width: 600px; height: 400px; position: absolute; float: left;top:35%"></div>
+				style="width: 600px; height: 400px; position: absolute;top:40%"></div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<%
 				JSONArray data2 = dao.generateDeptAvgRateJSON();
+					System.out.println("value of data2 --------------------"+data2);
 					pageContext.setAttribute("data2", data2);
+			%>
+			
+			<div id="my_chart3"
+				style="position:fixed;left:700px;top:50%;"></div>
+			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+			<%
+				JSONArray data3 = dao.generateJSON3();
+
+					pageContext.setAttribute("data3", data3);
 			%>
 
 			<script>
@@ -127,9 +138,27 @@
 		  
 		    };
 		     // Create and draw the visualization.
-		    new google.visualization.BarChart(
+		    new google.visualization.ColumnChart(
 		      document.getElementById('my_chart2')).draw(data2, options2);
 		  }
+	   
+	   
+	   google.load("visualization", "1", {packages:["table"]});
+	      //google.charts.load('current', {'packages':['table']});
+	      google.setOnLoadCallback(drawTable);
+	   function drawTable() {
+		    // Create and populate the data table.
+		    var data = google.visualization.arrayToDataTable(${data3});
+		    var options = {
+		      title: 'Total Budget Per Project',
+		      is3D: true,
+		      width: '100%',
+		      backgroundColor: { fill: "white" }
+		    };
+		     // Create and draw the visualization.
+		    new google.visualization.Table(
+		      document.getElementById('my_chart3')).draw(data, {showRowNumber: true, width: '500px', height: '800x'});
+	   }
    
    
 </script>

@@ -71,8 +71,9 @@
 								style="background: #2164d1; color: white; width: 269px;">Reports</button>
 							<div class="dropdown-content"
 								style="position: fixed; background: #2164d1; color: white; width: 269px;">
-								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a> <a href="resourceHours.jsp" rel="external">Resource
-									Analysation Report</a> <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
+								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a>
+								 <a href="resourceHours.jsp" rel="external">Budget Analysis</a>
+								  <a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
 							</div>
 						</div>
 					</li>
@@ -93,12 +94,13 @@
 					</div>
 				</div>
 
-<div data-role="main" class="ui-content" style="background-color:light-white; height:130px;">
-				<form method="post" action="ProjectReportController" style="width: 20%; margin: 0 auto; width: 100%; text-align: left">
-				<table>
+<div data-role="main" >
+				<form method="post" action="ProjectReportController" style="">
+				
+				<table style="margin-top:20px;background-color:#40bf80;border-radius:15px;padding:20px;margin-left:450px">
 				<tr>
 			
-						<td><label for="projectName">Project Name:</label> </td>
+						<td><label for="projectName"><h4>Project Name:  </h4></label> </td>
 						<td><select name="name">
 						<option>Select all Project</option>
 						<%
@@ -128,11 +130,13 @@
 				
 				
 				</table>
+			
 				</form>
 			</div>
-	
-	
 	</div>
+
 
 </body>
 </html>
+
+
