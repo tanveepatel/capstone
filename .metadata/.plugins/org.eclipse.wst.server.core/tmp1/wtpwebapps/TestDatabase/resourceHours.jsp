@@ -21,7 +21,7 @@
 <body>
 
 	<!-- Report -->
-	<div data-role="page" id="report">
+	<div data-role="page" id="report" style="background-color: white;">
 <% 
 				DatabaseOperations dao=new DatabaseOperations();
 				List<Project> projects = new Project();
@@ -58,11 +58,10 @@
 		</div>
 			
 	<div id="maintab" class="ui-bar ui-bar-a">
-					<p style="text-align:center; font-size: 20px;font-family: 'Comfortaa', cursive;">Financial
-				Reporting Tool</p>
+					<h3 style="font-size: 20px;text-align:center; margin-bottom:10px;font-family: 'Comfortaa', cursive;display:block">Financial Reporting Tool</h3>
 				<div data-role="navbar" id="tabs">
 				<ul>
-						<li><a href="1home.jsp" data-icon="home" class="ui-corner-all">Home</a></li>
+						<li><a href="1home.jsp" data-icon="home" class="ui-corner-all" rel="external">Home</a></li>
 						<li><a href="1import.jsp" data-icon="info" class="ui-corner-all">Import Timesheets</a></li>
 						<li ><a href="1project.jsp" data-icon="bullets" class="ui-corner-all">Projects</a></li>
 						
@@ -73,8 +72,9 @@
 								style="background: #2164d1; color: white; width: 269px;">Reports</button>
 							<div class="dropdown-content"
 								style="position: fixed; background: #2164d1; color: white; width: 269px;">
-								<a href="projectSummaryReport.jsp">Project Summary Report</a> <a href="resourceHours.jsp">Resource
-									Analysation Report</a> <a href="billRateDepartment.jsp">Bill Rate For Department </a>
+								<a href="projectSummaryReport.jsp" rel="external">Project Summary Report</a> 
+								<a href="resourceHours.jsp" rel="external">Budget Analysis</a> 
+								<a href="billRateDepartment.jsp" rel="external">Bill Rate For Department </a>
 							</div>
 						</div>
 					</li>
@@ -94,34 +94,70 @@
 						
 					</div>
 				</div>
-
-
-
-				
+	
+		<h3 style="text-align:center;font-family: 'Comfortaa',cursive">Budget Analysis</h3>	
 			
+			<div style="background-color: blue">
 			<div id="my_chart"
-				style="width: 600px; height: 400px; position: absolute; top: 40%;"></div>
+				style="width: 600px; height: 400px; position: absolute;top:40%"></div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<%
-				JSONArray data = dao.generateResourceJSON();
+				JSONArray data = dao.generateJSON1();
 				pageContext.setAttribute("data", data);
 			%>
+			
+			<div id="my_chart1"
+				style="position:fixed;left:650px;top:50%;"></div>
+			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+			<%
+				JSONArray data1 = dao.generateJSON2();
+				pageContext.setAttribute("data1", data1);
+			%>
+			</div>
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<script>
    google.load("visualization", "1", {packages:["corechart"]});
    google.setOnLoadCallback(drawChart);
+   
    function drawChart() {
     // Create and populate the data table.
+    
+     
     var data = google.visualization.arrayToDataTable(${data});
+    data.setProperty(0, 0, 'style', 'background-color: red;');
+    
     var options = {
-      title: 'Hours Per Resource',
+      title: 'Total Budget Per Project',
       is3D: true,
-      backgroundColor: { fill: "#f9f9f9" }
+      backgroundColor: { fill: "white" },
+      
     };
+    
+   
      // Create and draw the visualization.
     new google.visualization.PieChart(
       document.getElementById('my_chart')).draw(data, options);
-  }
+   }
+     
+ 
+     google.load("visualization", "1", {packages:["table"]});
+      //google.charts.load('current', {'packages':['table']});
+      google.setOnLoadCallback(drawTable);
+   function drawTable() {
+	    // Create and populate the data table.
+	    var data = google.visualization.arrayToDataTable(${data1});
+	    var options = {
+	      title: 'Total Budget Per Project',
+	      is3D: true,
+	      backgroundColor: { fill: "white" }
+	    };
+	     // Create and draw the visualization.
+	    new google.visualization.Table(
+	      document.getElementById('my_chart1')).draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+   }
+   
 </script>
+
+
 </body>
 </html>
