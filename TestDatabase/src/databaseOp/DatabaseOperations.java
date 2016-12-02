@@ -772,32 +772,38 @@ public class DatabaseOperations {
 	
 	public JSONArray generateDeptAvgRateJSON() {
 
-		String sql = "select distinct(department) as department, avg(billRate) as billRate from capstone.resource group by department";
+		String sql = "SELECT distinct(department) as department, avg(billRate) as billRate from resource group by department";
 		JSONArray list = new JSONArray();
 		ArrayList arrTest = null;
+		ArrayList arrTest2 = null;
 
 		try {
 			ResultSet rs = null;
 			PreparedStatement stm1 = connection.prepareStatement(sql);
 			rs = stm1.executeQuery(sql);
-			
 			int i = 0;
+			
 			while (rs.next()) {
 				
 				arrTest = new ArrayList();
+				arrTest2 = new ArrayList();
 				if (i == 0) {
 					arrTest.add("Department");
 					arrTest.add("Average Rate");
+					arrTest2.add(rs.getString("department"));
+					arrTest2.add(rs.getDouble("billRate"));
 					i++;
-					
 				} else {
 					arrTest.add(rs.getString("department"));
 					arrTest.add(rs.getDouble("billRate"));
 				}
 				list.add(arrTest);
+				if (!arrTest2.isEmpty()){
+				list.add(arrTest2);
+				}
 			}
 
-			System.out.print("JSON Array list from databaseclass ----------------" + list);
+			System.out.print("JSON Array " + list);
 		} catch (Exception ex) {
 			System.out.println("<h1>" + ex + "</g1>");
 		}

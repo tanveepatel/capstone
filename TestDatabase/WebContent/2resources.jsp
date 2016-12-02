@@ -80,7 +80,7 @@
 			<a href="addPerson.jsp" data-role="button" data-icon="plus"
 				data-iconpos="left" style="width:150px;">Add Resource</a>
 			<div>
-			<h2>Total Resources -<%=size1 %></h2>
+			<h2>Total Resources - <%=size1 %></h2>
 		<table class="hoverTable">
 		<tr><b>
 		<td><b>First Name&nbsp;&nbsp;</b></td>
